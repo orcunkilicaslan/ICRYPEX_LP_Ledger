@@ -458,7 +458,7 @@ footer{
 		height:auto;
 	}
 	.banner{
-		background:url(#{$mainImgPath}/banner/Big_Img_Main.jpg) no-repeat center center #010F1F;
+		background:url(#{$mainImgPath}/banner/Big_Img_Main.jpg?v=20200506v2) no-repeat center center #010F1F;
 		background-size:cover;
 		height:100vh;
 		min-height:765px;
@@ -900,17 +900,13 @@ footer{
 		background-size: contain;
 		width: 180px;
 		height: 45px;
-		position: absolute;
+		position: relative;
 		top: 30px;
-		left: 50%;
-		transform: translateX(-50%);
+		margin: auto;
 
 		@media screen and(max-width:$screenmd){
 			position: static;
 			top: auto;
-			left: auto;
-			transform: translateX(0);
-			margin: 0 auto;
 		}
 		@media screen and(max-width:$screenxs){
 			margin-bottom: 30px;
