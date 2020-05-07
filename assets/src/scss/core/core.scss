@@ -151,6 +151,24 @@ input[type="text"], select[name="select"], textarea{
 		span{
 			width:calc(100% - 29px);
 		}
+		p.desc{
+			cursor: pointer;
+			font-size: 16px;
+			line-height:20px;
+			color:#fff;
+			align-items: center;
+			@include flexbox();
+			position:relative;
+			align-items: flex-start;
+
+			a{
+				color:#fff;
+				&:hover{
+					color:#0A93EA;
+				}
+			}
+		}
+
 		label {
 			cursor: pointer;
 			font-size: 16px;

@@ -118,10 +118,8 @@
 				</div>
 			</div>
 			<div class="checkboxline ml-lg-4 ml-0 mt-2 mt-lg-0">
-				<div id="iconCekilisSartCheckId" class="squaredFour">
-					<input type="checkbox" value="None" id="check3" name="check" />
-					<label id="labelCekilisSartCheck" for="check3"><a href="#" class="urllink clickform" data-toggle="modal" data-target="#CekilisSartModal"><u>Çekiliş şartları</u></a>nı okumak&nbsp;için tıklayınız.</label>
-					<span class="inputerrormessage" id="msgCekilisSartCheckId"></span>
+				<div class="squaredFour">
+					<p class="desc"><a href="#" class="urllink clickform" data-toggle="modal" data-target="#CekilisSartModal"><u>Çekiliş şartlarını</u></a>&nbsp;okumak&nbsp;için tıklayınız.</p>
 				</div>
 			</div>
 		</div>
@@ -219,25 +217,8 @@
 		return true;
 	}
 
-	function verifyValidCekilisSart() {
-		var cekilisSartCheck	= document.getElementById('labelCekilisSartCheck').checked;
-
-		if(!cekilisSartCheck){
-			document.getElementById('labelCekilisSartCheck').classList.add("error");
-			document.getElementById('labelCekilisSartCheck').classList.remove("check");
-
-			return false;
-		} else {
-			document.getElementById('labelCekilisSartCheck').classList.add("check");
-			document.getElementById('labelCekilisSartCheck').classList.remove("error");
-
-			return true;
-		}
-		return true;
-	}
-
 	function submitValidForm() {
-		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidTermsOfUse() || !verifyValidCekilisSart()){
+		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidTermsOfUse()){
 			console.log("HATA");
 			return false;
 		} else {
@@ -423,15 +404,16 @@
 </div>
 <!-- Modal -->
 
-<!-- SCRIPT -->
+<!-- Scripts -->
 <script src="assets/cdn/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="assets/cdn/bootstrap.min.js"></script>
 <script src="assets/cdn/wow.min.js"></script>
 <script src="assets/vendor/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-<script async="" src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async=""></script>
 <script src="assets/cdn/core.js"></script>
 <script src="assets/dist/js/core.js"></script>
+<!-- Scripts -->
 
 </body>
 </html>
