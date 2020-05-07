@@ -13,7 +13,14 @@
 
 <header class="container-fluid">
 	<div class="container d-flex justify-content-center">
-		<a href="https://www.icrypex.com/" title="ICRYPEX" rel="bookmark" target="_blank"><img src="assets/img/icrypex-logo.svg" alt="" class="logo"></a>
+		<div class="logoarea">
+			<div class="logoarea-cell">
+				<a href="https://www.icrypex.com/" title="ICRYPEX" rel="bookmark" target="_blank"><img src="assets/img/icrypex-logo.svg" alt="" class="logo"></a>
+			</div>
+			<div class="logoarea-cell">
+				<img src="assets/img/kriptosozluk-logo.png" alt="" class="logo">
+			</div>
+		</div>
 	</div>
 </header>
 <section class="banner-wrapper">
@@ -104,10 +111,17 @@
 					<span class="inputerrormessage" id="msgUseTermCheckId"></span>
 				</div>
 			</div>
-			<div class="checkboxline ml-lg-4 ml-0 mt-2 mt-lg-0">
+			<div class="checkboxline ml-lg-4 ml-0 mt-2 mt-lg-0 d-none">
 				<div class="squaredFour">
 					<input type="checkbox" value="None" id="check2" name="check" checked />
 					<label for="check2"><span>Gelişmelerden ve duyurulardan haberdar olmak istiyorum.</span></label>
+				</div>
+			</div>
+			<div class="checkboxline ml-lg-4 ml-0 mt-2 mt-lg-0">
+				<div id="iconCekilisSartCheckId" class="squaredFour">
+					<input type="checkbox" value="None" id="check3" name="check" />
+					<label id="labelCekilisSartCheck" for="check3"><a href="#" class="urllink clickform" data-toggle="modal" data-target="#CekilisSartModal"><u>Çekiliş şartları</u></a>nı okumak&nbsp;için tıklayınız.</label>
+					<span class="inputerrormessage" id="msgCekilisSartCheckId"></span>
 				</div>
 			</div>
 		</div>
@@ -205,9 +219,25 @@
 		return true;
 	}
 
+	function verifyValidCekilisSart() {
+		var cekilisSartCheck	= document.getElementById('labelCekilisSartCheck').checked;
+
+		if(!cekilisSartCheck){
+			document.getElementById('labelCekilisSartCheck').classList.add("error");
+			document.getElementById('labelCekilisSartCheck').classList.remove("check");
+
+			return false;
+		} else {
+			document.getElementById('labelCekilisSartCheck').classList.add("check");
+			document.getElementById('labelCekilisSartCheck').classList.remove("error");
+
+			return true;
+		}
+		return true;
+	}
 
 	function submitValidForm() {
-		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidTermsOfUse()){
+		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidTermsOfUse() || !verifyValidCekilisSart()){
 			console.log("HATA");
 			return false;
 		} else {
@@ -254,7 +284,7 @@
 				<h4 class="mt-xl-0 mt-3">LEDGER NEDEN ÖNEMLİDİR?</h4>
 				<p>İşlemlerinizi Ledger Live arayüzü ile yaptıktan sonra cüzdanınızı bilgisayarınızdan ayırırsınız. Böylece varlıklarınızı güvenle saklayabilirsiniz.</p>
 				<h4 class="mt-xl-5 mt-3">NANO S NEDİR?</h4>
-				<p>Ledger Nano S, bitcoin ve altcoinlerinizi depolamak, ödeme alıp göndermek ve kripto verilerinize yüksek güvenlik sağlamak gibi özellikleri olan bir fiziksel donanım cüzdanıdır.</p>
+				<p>Ledger Nano S, bitcoin ve altcoinlerinizi yüksek güvenlikle depolamak, ödeme alıp göndermek gibi özellikleri olan bir fiziksel donanım cüzdanıdır.</p>
 			</div>
 		</div>
 		<div class="container">
@@ -327,7 +357,7 @@
 						</div>
 						<div class="content">
 							<h4 class="border-bt ht2">YÜKSEK DERİNLİK</h4>
-							<p>Icrypex size 5 para birimi ile 10 markette derinlikli bir borsa hizmeti sunar. Teorik olarak bu, aynı anda 14 farklı markete erişebildiğiniz anlamına gelir. Her birinde istediğiniz an işleme girip çıkabillirsiniz.</p>
+							<p>Icrypex size 7 para birimi ile 14 markette derinlikli bir borsa hizmeti sunar. Teorik olarak bu, aynı anda 14 farklı markete erişebildiğiniz anlamına gelir. Her birinde istediğiniz an işleme girip çıkabillirsiniz.</p>
 						</div>
 					</div>
 				</div>
@@ -378,20 +408,15 @@
 
 
 <!-- Modal -->
-<div class="modal modalwhite" id="TradeAndWinModal">
+<div class="modal modalwhite" id="CekilisSartModal">
 	<div class="modal-dialog modal-lg modal-dialog-centered">
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 			<ul>
-				<li>18 yaş üstü kişiler hesap oluşturup, emir girebilir.</li>
-				<li>Sadece onaylı hesaplar kampanyadan yararlanabilecektir.</li>
-				<li>Komisyon hediyesi, BTC, LTC, XRP, ETH, USD ve TRY cinsinden tüm piyasa yapıcı işlemler için geçerlidir.</li>
-				<li>Komisyon hediyesi 31.12.2019 tarihine kadar gerçekleşen emirler için geçerlidir.</li>
-				<li>Komisyonlar yapılan işlem cinsinden hesaba yansıtılır. (BTC/TRY satış işleminde komisyon hesaba TRY olarak yansıtılır. Aynı şekilde BTC/TRY alış işleminde komisyon hesaba BTC olarak yansıtılır.)</li>
-				<li>Komisyon, yapılan işlemin %0,05'i kadardır.</li>
-				<li>Bir müşteri maksimum 500 TL hediye komisyon kazanabilir. Hediye komisyon limitine ulaşılmasının ardından gerçekleştirilecek emirler 0 komisyon olarak ücretlendirilecektir.</li>
-				<li>Müşteriler, kendi emirlerini karşılayamaz. Tespit edildiği durumda müşteri kampanyadan faydalandırılmaz.</li>
-				<li>Yukarıdaki maddeye benzer doğabilecek durumlarda, Icrypex, kampanyayı ilgili müşteri ya da müşteriler için durdurma hakkına sahiptir.</li>
+				<li>18 yaşından küçükler çekilişe katılamaz. Katılıp ödül kazanmaları durumunda ödül alamayacaktır.</li>
+				<li>Ödüller 2. bir kişiye aktarılamaz.</li>
+				<li>Kazanan kişilere 1 hafta içerisinde ulaşılamaması durumunda ödül yedek kazananlara iletilecektir. (2 adet yedek kazanan seçilecektir)</li>
+				<li>Bu çekilişe katılarak yukarıdaki şartları ve Icrypex'in kişisel verilerinizi kullanmasını kabul etmiş sayılırsınız.</li>
 			</ul>
 		</div>
 	</div>

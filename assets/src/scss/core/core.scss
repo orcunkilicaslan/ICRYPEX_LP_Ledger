@@ -249,8 +249,32 @@ header{
 	width:100%;
 	z-index:1;
 
+	.logoarea{
+		display: flex;
+		align-items: center;
+
+		&-cell{
+			padding: 0 15px;
+			position: relative;
+
+			&::before{
+				content: "";
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				background-color: transparentize(white, 0.7);
+				top: 0;
+				left: 0;
+			}
+
+			&:first-child::before{
+				display: none;
+			}
+		}
+	}
+
 	.logo{
-		width:180px;
+		height: 60px;
 	}
 
 	@media screen and(max-width:$screenxl){
@@ -1097,7 +1121,8 @@ footer{
 			font-weight: 500;
 		}
 		.left{
-			width:calc(50% - 150px);
+			width:calc(50% - 130px);
+
 			@media screen and(max-width:$screenlg){
 				width:100%;
 				text-align: center !important;
@@ -1119,17 +1144,21 @@ footer{
 		}
 		.center{
 			width:250px;
-			margin:-50px 25px ;
+			margin:-45px 10px ;
 			@media screen and(max-width:$screenlg){
 				display: none;
 			}
 		}
 		.right{
-			width:calc(50% - 150px);
+			width:calc(50% - 130px);
 			@media screen and(max-width:$screenlg){
 				width:100%;
 				text-align: center !important;
 			}
+		}
+		.left,
+		.right{
+			padding-bottom: 25px;
 		}
 	}
 	.col-right{
