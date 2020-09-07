@@ -581,8 +581,8 @@ footer{
 				line-height: 76px;
 			}
 			@media screen and(max-width:$screenmd){
-				font-size: 52px;
-				line-height: 52px;
+				font-size: 46px;
+				line-height: 46px;
 			}
 			@media screen and(max-width:$screenxs){
 				font-size: 40px;
@@ -591,6 +591,18 @@ footer{
 			@media screen and(max-width:400px){
 				font-size: 32px;
 				line-height: 32px;
+			}
+
+			span{
+				@media screen and(max-width:$screenxs){
+					display: block;
+				}
+			}
+
+			br{
+				@media screen and(max-width:$screenxs){
+					display: none;
+				}
 			}
 		}
 		h2{
