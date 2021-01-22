@@ -291,7 +291,11 @@ header{
 		}
 	}
 
-	.logo{
+	.logoicrypex{
+		height: 30px;
+	}
+
+	.logokriptosozluk{
 		height: 60px;
 	}
 
@@ -317,7 +321,7 @@ footer{
 	}
 	.banks{
 		.middle{
-			width:650px;
+			width:420px;
 			margin:auto;
 			position:relative;
 			@media screen and(max-width:$screenxs){
@@ -326,7 +330,7 @@ footer{
 			&:before, &:after{
 				content:"";
 				position:absolute;
-				width:5060px;
+				width:5000px;
 				left:-5005px;
 				background:rgba(#758ca3, .35);
 				height:1px;
@@ -1238,10 +1242,10 @@ footer{
 	position:relative;
 	width:100%;
 	span{
-		width:50px;
-		height:50px;
-		background:url(#{$mainImgPath}/icons/ic-symbol.svg) no-repeat;
-		background-size:50px;
+		width:64px;
+		height:64px;
+		background:url(#{$mainImgPath}/icons/ic-symbol-v2.svg) no-repeat;
+		background-size:64px;
 		display:block;
 		margin:15px auto 0;
 		position:relative;
@@ -1255,7 +1259,7 @@ footer{
 			left:-5005px;
 			background:rgba(#758ca3, .35);
 			height:1px;
-			top: 25px;
+			top: 32px;
 		}
 		&:after{
 			right:-5005px;
